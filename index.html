@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Nancy Homepage</title>
+</head>
+<body>
+    <p id="iksde">Iksde</p>
+
+    <script>
+        var element = document.getElementById('iksde');
+        element.style.margin = 0;
+        element.style.padding = 0;
+
+        element.addEventListener('mouseover', function (event) {
+            element.style.fontSize = '40px';
+        });
+        element.addEventListener('mouseout', function (evemt) {
+            element.style.fontSize = '14px';
+        });
+
+        document.write("TEST".bold());
+    </script>
+
+    <p onclick="this.style.fontWeight = 'bold'">XXXX</p>
+</body>
+</html>
