@@ -2,17 +2,29 @@
 <html>
 <head>
     <meta charset="utf-8">
-    <title>Nancy Game</title>
-    <link rel="stylesheet" href="../assets/css/style.css" type="text/css">
-    <script src="../assets/lib/pixi.min.js"></script>
+    <title>Vagix Game</title>
+    <link rel="stylesheet" href="css/style.css" type="text/css">
+
+    <!-- Libs -->
+    <script src="libs/pixi.min.js"></script>
+
+    <!-- Main -->
+    <script src="js/Vagix.js"></script>
+
+    <!-- Imports -->
+    <script src="js/Screen.js"></script>
+    <script src="js/View.js"></script>
+    <script src="js/network/ConnectionProvider.js"></script>
+    <script src="js/views/BackgroundView.js"></script>
+    <script src="js/views/PlayerView.js"></script>
+    <script src="js/listener/KeyDownListener.js"></script>
 </head>
-<body>
+<body></body>
 <script>
-    var ws = new WebSocket('ws://127.0.0.1:25500/nancy');
-    ws.onopen = function() { console.log('Connected!'); };
-    ws.onclose = function() { console.log('Lost connection'); };
-    ws.onmessage = function(msg) { console.log(msg.data); };
+    window.onload = function () {
+        var vagix = new Vagix();
+        vagix.initialize();
+        vagix.launch();
+    };
 </script>
-<script src="../assets/js/script.js"></script>
-</body>
 </html>
