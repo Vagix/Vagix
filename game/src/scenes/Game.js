@@ -88,11 +88,14 @@ export default class Game extends Phaser.Scene {
                 this.player.x = this.target_point.x;
                 this.player.y = this.target_point.y;
 
-                this.next_tile = this.map.worldToTileXY(this.player.x + (this.next_direction.x * this.TILE_SIZE), this.player.y + (this.next_direction.y * this.TILE_SIZE));
-                this.target_point.x = this.next_tile.x * this.TILE_SIZE + (this.TILE_SIZE / 2);
-                this.target_point.y = this.next_tile.y * this.TILE_SIZE + (this.TILE_SIZE / 2);
+                this.current_tile = this.map.worldToTileXY(this.player.x, this.player.y);
 
-                this.map.putTileAt(1, this.next_tile.x - this.next_direction.x, this.next_tile.y - this.next_direction.y);
+
+                // Place target point in the center of next tile
+                this.target_point.x = (this.current_tile.x + this.next_direction.x) * this.TILE_SIZE + (this.TILE_SIZE / 2);
+                this.target_point.y = (this.current_tile.y + this.next_direction.y) * this.TILE_SIZE + (this.TILE_SIZE / 2);
+
+                this.map.putTileAt(1, this.current_tile.x, this.current_tile.y);
 
                 this.current_direction = this.next_direction.clone();
             }
