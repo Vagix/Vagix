@@ -34,8 +34,8 @@ export default class Game extends Phaser.Scene {
 
         let tiles = this.map.addTilesetImage('twobois');
 
-        this.map.createDynamicLayer(0, tiles, 0, 0)
-        // let layer2 = this.map.createDynamicLayer(1, tiles, 0, 0)
+        this.map.createStaticLayer(0, tiles, 0, 0);
+        this.map.createBlankDynamicLayer(2, tiles, 0, 0);
 
         this.anims.create({
             key: "move",
