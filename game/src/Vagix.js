@@ -5,7 +5,7 @@ export default new Phaser.Game({
     scale: {
         width: 400,
         height: 400,
-        autoCenter: Phaser.Scale.CENTER_BOTH
+        autoCenter: Phaser.Scale.CENTER_HORIZONTALLY
     },
     backgroundColor: '#2d2d2d',
     scene: Game,
